@@ -75,6 +75,7 @@ BlockChain.prototype.validateBlock = function(block) {
 BlockChain.prototype.addBlock = function(block) {
   if (Flags.pbft && !this.node.isBad) {
     var slotNumber = slots.getSlotNumber(slots.getTime(block.getTimestamp() * 1000));
+      console.log("slot number %d ", slotNumber)
     this.pbft.addBlock(block, slotNumber);
   } else {
     this.commitBlock(block);

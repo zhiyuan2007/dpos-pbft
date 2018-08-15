@@ -23,7 +23,7 @@ function main() {
   async.series([
     function(next) {
       console.log('step 1 init nodes ...');
-      for (var i = 0; i < 20; i++) {
+      for (var i = 0; i < 5; i++) {
         nodes[i] = new Node(i, badIds.indexOf(i) !== -1);
       }
       setTimeout(next, 1000);
@@ -47,7 +47,8 @@ function main() {
       nodes.forEach(function(node) {
         node.printBlockChain();
       });
-    }, 5000);
+        console.log("\n");
+    }, 8000);
   });
 }
 

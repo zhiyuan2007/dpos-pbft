@@ -24,7 +24,7 @@ function Node(i, isBad) {
 
 Node.prototype.connect = function() {
   for (var i = 0; i < 5; ++i) {
-    var rand = Math.floor(Math.random() * 10);
+    var rand = Math.floor(Math.random() * 5);
     if (rand !== this.id && !this.peers[rand]) {
       var peer = new Peer(rand, PORT + rand, this.id);
       peer.setMessageCb(this.processMessage_.bind(this));
